@@ -8,6 +8,7 @@ RUN npm run build
 # /app/build <-- all the stuff that we are carried about. 
 
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /user/share/nginx/html
 
 # we don't need to actually start nginx , its default command is to start it.
